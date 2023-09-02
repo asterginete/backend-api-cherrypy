@@ -1,4 +1,4 @@
-cherrypy-user-api/
+backend-api-cherrypy
 │
 ├── app/
 │   ├── models/
