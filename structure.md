@@ -1,52 +1,62 @@
+```
 backend-api-cherrypy
 │
 ├── app/
 │   ├── models/
 │   │   ├── __init__.py
-│   │   ├── user.py             # User and UserProfile models
-│   │   ├── token.py            # APIToken model
-│   │   ├── email_queue.py      # EmailQueue model
-│   │   ├── file_upload.py      # FileUpload model
-│   │   └── log.py              # Log model
+│   │   ├── user.py
+│   │   ├── token.py
+│   │   ├── email_queue.py
+│   │   ├── file_upload.py
+│   │   └── log.py
 │   │
 │   ├── views/
 │   │   ├── __init__.py
-│   │   ├── user_api.py         # CherryPy UserAPI class with all endpoints
-│   │   └── ...                 # Other potential views
+│   │   ├── user_api.py
+│   │   ├── token_api.py       # Endpoints related to token management
+│   │   ├── file_api.py        # Endpoints related to file uploads
+│   │   └── log_api.py         # Endpoints for viewing logs (admin only)
 │   │
 │   ├── services/
 │   │   ├── __init__.py
-│   │   ├── email_service.py    # Logic for sending emails
-│   │   ├── file_service.py     # Logic for handling file uploads
-│   │   └── ...                 # Other services as needed
+│   │   ├── email_service.py
+│   │   ├── file_service.py
+│   │   ├── log_service.py     # Service for logging actions/events
+│   │   └── token_service.py   # Service for token generation and validation
 │   │
 │   ├── utils/
 │   │   ├── __init__.py
-│   │   ├── auth.py             # Authentication and authorization utilities
-│   │   ├── validators.py       # Data validation functions
-│   │   └── ...                 # Other utility functions
+│   │   ├── auth.py
+│   │   ├── validators.py
+│   │   ├── error_handlers.py  # Utility functions for handling errors
+│   │   └── helpers.py         # General helper functions
 │   │
-│   ├── __init__.py             # Initializes the app, connects to the database
-│   └── tasks.py                # Background tasks (e.g., for Celery)
+│   ├── __init__.py
+│   └── tasks.py
 │
 ├── config/
 │   ├── __init__.py
-│   ├── settings.py             # Configuration settings
-│   └── logging_config.py       # Logging configurations
+│   ├── settings.py
+│   └── logging_config.py
 │
 ├── db/
-│   ├── migrations/             # Database migration scripts (using Alembic)
-│   └── init_db.py              # Script to initialize the database
+│   ├── migrations/  # Database migration scripts (using Alembic)
+│   └── init_db.py
 │
-├── tests/                      # Unit tests and test configurations
+├── tests/
 │   ├── __init__.py
-│   ├── test_user_api.py        # Tests for the UserAPI
-│   └── ...                     # Other test files
+│   ├── test_user_api.py
+│   ├── test_token_api.py      # Tests for token management
+│   ├── test_file_api.py       # Tests for file uploads
+│   ├── test_log_api.py        # Tests for log viewing
+│   └── test_services.py       # Tests for various services
 │
-├── static/                     # Static files (e.g., CSS, JS, images)
+├── static/
 │
-├── templates/                  # HTML templates (if needed for web views)
+├── templates/
 │
-├── .gitignore                  # List of files and directories to ignore in version control
-├── README.md                   # Project documentation
-└── run.py                      # Main script to run the CherryPy application
+├── .gitignore
+├── README.md
+└── run.py
+
+```
